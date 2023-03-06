@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerInputHandler : MonoBehaviour
 {
     public event EventHandler OnInteractAction;
+    public event EventHandler OnInteractAlternateAction;
     public Vector2 RawMovementInput {get; private set;}
     public bool interactInput       {get; private set;}
 
@@ -24,6 +25,14 @@ public class PlayerInputHandler : MonoBehaviour
         if(context.performed)
         {
             OnInteractAction?.Invoke(this, EventArgs.Empty);
+        }
+    }
+    
+    public void OnInteractAlternateInput(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            OnInteractAlternateAction?.Invoke(this, EventArgs.Empty);
         }
     }
 }

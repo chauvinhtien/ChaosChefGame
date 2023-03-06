@@ -13,17 +13,13 @@ public class ContainerCounter : BaseCounter
     {
         if(!player.HasKitChenObject())
         {
-            Transform kitchenObjectTransform = Instantiate(kitchenObjectData.prepab, spwanPosition);
-            //Give the Kitchen Object to Player
-            kitchenObjectTransform.GetComponent<KitchenObject>().SetKitchenObjectParent(player);
+            KitchenObject.SpawnKitChenObject(kitchenObjectData, player);
 
             OnPlayerGrabbedObject?.Invoke(this, EventArgs.Empty);
         }else
         {
             Debug.LogError("player Already have kitchenObject");
         }
-        
-        
-        
     }
+    
 }

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efb8f0b846146674db7a055110ff2015, type: 3}
   m_Name: Cheese
   m_EditorClassIdentifier: 
-  prepab: {fileID: 7626220471136750138, guid: 06490c5be9fc424469400d03f3f92a60, type: 3}
+  prefab: {fileID: 7626220471136750138, guid: 06490c5be9fc424469400d03f3f92a60, type: 3}
   sprite: {fileID: 21300000, guid: da2d04fe27b94e34ea0b624569b48a6f, type: 3}
   objectName: Cheese

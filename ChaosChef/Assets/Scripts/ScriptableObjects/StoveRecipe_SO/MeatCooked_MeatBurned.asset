@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efb8f0b846146674db7a055110ff2015, type: 3}
-  m_Name: Cabbage
+  m_Script: {fileID: 11500000, guid: 9ffb155fa4f378e49a92bace4a799b3d, type: 3}
+  m_Name: MeatCooked_MeatBurned
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1181579989069203728, guid: a2e4b13576addc74398ebe745a44deb8, type: 3}
-  sprite: {fileID: 21300000, guid: e1c23b5aded59d84da30738d3267a6c9, type: 3}
-  objectName: Cabbage
+  input: {fileID: 11400000, guid: 0b47d9dc449f7814cabc39e132c7d7ee, type: 2}
+  output: {fileID: 11400000, guid: 73245374be251e340abc0dbc8ba7ce1b, type: 2}
+  burnedTime: 3

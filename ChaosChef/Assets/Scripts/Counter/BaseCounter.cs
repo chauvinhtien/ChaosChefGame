@@ -13,6 +13,10 @@ public class BaseCounter : MonoBehaviour, IKitchenObjectParent
     {
         Debug.LogError("Base couter.Interact()");
     }
+    public virtual void InteractAlternate(PlayerController player)
+    {
+        Debug.LogError("Base couter.InteractAlternate");
+    }
 
     public Transform GetKitchenObjectFollowTransform()
     {
