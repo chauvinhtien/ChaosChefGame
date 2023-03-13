@@ -18,13 +18,30 @@ public class ClearCounter : BaseCounter, IKitchenObjectParent
             }else
             {
                 //player not carrying anything
-                Debug.LogError("player not carrying anything");
             }
         }else{
             if(player.HasKitChenObject())
             {
                 //Player is carrying something
-                Debug.LogError("ClearCouter already have kitchen object");
+                if(player.GetKitchenObject().TryGetPlate(out PlateKitchenObject plateKitchenObject))
+                {
+                    //Player is holding a plate
+                    if(plateKitchenObject.TryAddIngredient(GetKitchenObject().GetKitchenObjectSO()))
+                    {
+                        GetKitchenObject().DestroySelf();
+                    }
+                }else
+                {
+                    //Player is not carrying a plate but sth else
+                    if(GetKitchenObject().TryGetPlate(out plateKitchenObject))
+                    {
+                        //Couter is holding a plate
+                        if(plateKitchenObject.TryAddIngredient(player.GetKitchenObject().GetKitchenObjectSO()))
+                        {
+                            player.GetKitchenObject().DestroySelf();
+                        }
+                    }
+                }
             }else
             {
                 //player not carrying anything

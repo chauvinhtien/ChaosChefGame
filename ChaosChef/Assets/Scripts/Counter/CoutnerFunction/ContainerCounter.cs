@@ -18,7 +18,7 @@ public class ContainerCounter : BaseCounter
             OnPlayerGrabbedObject?.Invoke(this, EventArgs.Empty);
         }else
         {
-            Debug.LogError("player Already have kitchenObject");
+            //Player Already have kitchenObject
         }
     }
     

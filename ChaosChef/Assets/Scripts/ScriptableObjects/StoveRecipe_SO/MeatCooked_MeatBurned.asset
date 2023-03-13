@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: MeatCooked_MeatBurned
   m_EditorClassIdentifier: 
   input: {fileID: 11400000, guid: 0b47d9dc449f7814cabc39e132c7d7ee, type: 2}
-  output: {fileID: 11400000, guid: 73245374be251e340abc0dbc8ba7ce1b, type: 2}
+  output: {fileID: 11400000, guid: 544b1ea0b05014641b0767e0d6249edf, type: 2}
   burnedTime: 3

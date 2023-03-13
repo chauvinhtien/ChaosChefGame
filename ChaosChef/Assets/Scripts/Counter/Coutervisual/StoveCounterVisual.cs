@@ -1,18 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class StoveCounterVisual : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    [SerializeField] private StoveCounter stoveCounter;
+    [SerializeField] private GameObject stoveGameObject;
+    [SerializeField] private GameObject stoveParticel;
+
+    private void Start() {
+        stoveCounter.OnStateChanged += StoveCounter_OnStateChanged;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void StoveCounter_OnStateChanged(object sender, StoveCounter.OnStateChangedEventArgs e)
     {
-        
+        bool showVisual = (e.state == StoveCounter.State.Frying || e.state == StoveCounter.State.Fried);
+        stoveGameObject.SetActive(showVisual);
+        stoveParticel.SetActive(showVisual);
     }
 }

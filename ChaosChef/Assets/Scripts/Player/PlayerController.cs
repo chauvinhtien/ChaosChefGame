@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour, IKitchenObjectParent
 
     public static PlayerController Instance {get; private set;}
 
+    public event EventHandler OnPicSomething;
+
     public event EventHandler<OnSelectedCounterChangeEventArgs> OnSelectedCounterChange;
     public class OnSelectedCounterChangeEventArgs: EventArgs
     {
@@ -71,11 +73,16 @@ public class PlayerController : MonoBehaviour, IKitchenObjectParent
 
     private void GameInput_OnInteractAction(object sender, System.EventArgs e)
     {
+        if(!GameManager.Instance.IsGamePlaying()) return;
+
         selectedCounter?.Interact(this);
     }
     private void GameInput_OnInteractAlternateAction(object sender, System.EventArgs e)
     {
+        if(!GameManager.Instance.IsGamePlaying()) return;
+        
         selectedCounter?.InteractAlternate(this);
+        
     }
 
     private void HandleInteraction()
@@ -125,6 +132,10 @@ public class PlayerController : MonoBehaviour, IKitchenObjectParent
     public void SetKitchenObject(KitchenObject kitchenObject)
     {
         this.kitchenObject = kitchenObject;
+        if(kitchenObject != null)
+        {
+            OnPicSomething?.Invoke(this, EventArgs.Empty);
+        }
     }
 
     public KitchenObject GetKitchenObject()
